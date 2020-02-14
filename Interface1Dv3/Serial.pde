@@ -67,12 +67,9 @@ void executeJoystickInput(int _joyX, int _joyY, int _button, int _rotary) {
   //if (rotary == 1) player.move(3);
   //if (rotary == 255) player.move(-3);
   if (rotary == 1) {
-    timeChange++;
-    if (timeChange == 21) timeChange = 0;
-    println(timeChange);
+    player.move(2);
   } else if (rotary == 255) {
-    timeChange--;
-    if (timeChange == -1) timeChange = 10;
+    player.move(-2);
   }
   
     //Check if joystick has moved to the right

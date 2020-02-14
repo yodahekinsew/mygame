@@ -6,6 +6,7 @@ class Player {
 
   color playerColor = color(255,255,255);
   int position = 0;
+  int size = 5;
   int originPosition = 0;
   int movementEffect = 0;
   int score;
@@ -15,20 +16,21 @@ class Player {
   }
   
   void update() {
-    if (movementEffect > 0) {
-      for (int i = 0; i < movementEffect; i++) {
-        display.setPixel(player.position-i-1, color(200,200,200));
-      }
-      movementEffect--;
+    //if (movementEffect > 0) {
+    //  for (int i = 0; i < movementEffect; i++) {
+    //    display.setPixel(player.position-i-1, color(200,200,200));
+    //  }
+    //  movementEffect--;
+    //}
+    //if (movementEffect < 0) {
+    //  for (int i = -1; i > movementEffect; i--) {
+    //    display.setPixel(player.position-i, color(200,200,200));
+    //  }
+    //  movementEffect++;
+    //}
+    for (int i = 0; i < size; i++) {
+      display.setPixel(player.position+i, player.playerColor);
     }
-    if (movementEffect < 0) {
-      println(movementEffect);
-      for (int i = -1; i > movementEffect; i--) {
-        display.setPixel(player.position-i, color(200,200,200));
-      }
-      movementEffect++;
-    }
-    display.setPixel(player.position, player.playerColor);
   }
 
   // Move player based on keyboard input
@@ -38,9 +40,9 @@ class Player {
     position = position + _direction;
     if (position <= 0) {
       position = 0;
-    } else if (position >= displaySize-1) {
-      gameState = "RESTART";
-      position = displaySize-1;
+    } else if (position >= displaySize-size) {
+      //gameState = "RESTART";
+      position = displaySize-size;
     }
   }
   

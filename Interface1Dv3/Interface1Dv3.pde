@@ -29,6 +29,8 @@ DisplayBuffer display = new DisplayBuffer(displaySize);    // aggregates our fin
 
 Player player = new Player();
 
+Ball ball = new Ball(10);
+
 Level level = new Level(displaySize);
 
 //Player playerOne = new Player(color(255,0,255), displaySize, 0);             // Adding 2 players to the game

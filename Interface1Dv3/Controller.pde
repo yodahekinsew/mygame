@@ -15,10 +15,9 @@ class Controller {
         
       case "PLAY":
         display.clear();
-        //spikes.update();
-        //enemy.update();
-        level.update();
+        
         player.update();
+        level.update();
         break;
         
       case "RESTART":

@@ -17,7 +17,7 @@ class Enemy implements Element {
   
   int getSpeed() {
     if (speed + timeChange > 10) {
-      if (10-(speed+timeChange-10) < 1) return -1*(10-(speed+timeChange-10));
+      if (10-(speed+timeChange-10) < 1) return -1*(10-(speed+timeChange-10))+1;
       return 10-(speed+timeChange-10);
     }
     return speed + timeChange;
