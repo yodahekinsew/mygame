@@ -10,14 +10,16 @@
 
 */ /////////////////////////////////////
 
-import gifAnimation.*;                      // library for playing animated gifs
-import http.requests.*;
+//import gifAnimation.*;                      // library for playing animated gifs
+//import http.requests.*;
 
 final static int displaySize = 50;          // how many pixels are visible in the game
 final static int displayPixelSize = 30;     // how big should they look on screen
 
 final static int WAIT_TIME = 25;
 final static int ENEMY_SPEED = 1;
+
+int timeChange = 0;
 
 int currentFrame = 0;
 int appFramerate = 60;
@@ -62,7 +64,8 @@ void setup() {
     
   frameRate(appFramerate);     //  important to lock the framerate, so animations are smooth
   
-  animation = Gif.getPImages(this, "Animation.gif");
+  //animation = Gif.getPImages(this, "Animation.gif");
+  startSerial();
   
   //GetRequest get = new GetRequest("http://httprocessing.heroku.com");
   //get.send();
